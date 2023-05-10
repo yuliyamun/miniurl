@@ -1,0 +1,2 @@
+go test fuzz v1
+string("sz\xff\x80\x80\xfftring")

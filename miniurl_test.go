@@ -1,6 +1,7 @@
 package miniurl_test
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -21,4 +22,10 @@ func TestHashIsDeterministic(t *testing.T) {
 	output1 := miniurl.Hash(input)
 	output2 := miniurl.Hash(input)
 	assert.Equal(t, output1, output2)
+}
+
+func ExampleHash() {
+	const input = "https://github.com/yuliyamun/miniurl"
+	output := miniurl.Hash(input)
+	fmt.Println(output)
 }

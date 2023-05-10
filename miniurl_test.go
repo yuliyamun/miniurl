@@ -29,3 +29,11 @@ func ExampleHash() {
 	output := miniurl.Hash(input)
 	fmt.Println(output)
 }
+
+func BenchmarkHash(b *testing.B) {
+	const input = "https://github.com/yuliyamun/miniurl"
+	for n := 0; n < b.N; n++ {
+		miniurl.Hash(input)
+	}
+
+}
